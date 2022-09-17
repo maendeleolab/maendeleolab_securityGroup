@@ -46,9 +46,10 @@ export ENV_FPATH="/home/ubuntu"
 ```
 
 ## [Dependencies](#Dependencies)
-###The scripts need access to the following constructs.
+### The deploy script needs to access the build scripts in the following projects.
 - [maendeleolab_vpc](https://github.com/maendeleolab/maendeleolab_vpc) 
 - [maendeleolab_subnet](https://github.com/maendeleolab/maendeleolab_subnet) 
+- [maendeleolab_prefixList](https://github.com/maendeleolab/maendeleolab_prefixList) 
 
 ## [Walk-through](#Walk-through)
 
