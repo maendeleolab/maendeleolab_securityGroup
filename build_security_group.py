@@ -15,7 +15,7 @@ FPATH = os.environ.get('ENV_FPATH')
 
 #logging
 logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p ',\
-									filename=FPATH+'/cloudNetworkSpecialty/security_groups/security_group.log', level=logging.INFO)
+            filename=FPATH+'/maendeleolab_securityGroup/security_group.log', level=logging.INFO)
 
 #adding flexibility for regions
 def region_id(name='us-east-1'):
@@ -32,10 +32,11 @@ def make_security_group(**kwargs):
 			--vpc-id " + kwargs['Vpc_Id'] + "\
 			--region " + kwargs['Region'] 
 		)
-		logging.info('Created Security Group:' + kwargs['Security_group_name'])
+		logging.info(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
+		print(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
 	except Exception as err:
 		logging.info(err)
-		print(f'Logging "make_security_group" in security-group.log')
+		print(f'Logging "make_security_group" in security-group.log...')
 
 def add_security_group_rule(**kwargs):
 	try:
@@ -45,10 +46,10 @@ def add_security_group_rule(**kwargs):
 		--ip-permissions \
 		IpProtocol=" + kwargs['Ip_protocol'] + ",FromPort=" + kwargs['From_port'] + ",ToPort=" + kwargs['To_port'] + ",IpRanges='[{CidrIp=" + kwargs['IP_range'] + "}]' "
 		)
-		logging.info('Created Security Group:' + kwargs['Security_group_name'])
+		logging.info(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
 	except Exception as err:
 		logging.info(err)
-		print(f'Logging "add_security_group_rule" in security-group.log')
+		print(f'Logging "add_security_group_rule" in security-group.log...')
 
 def add_security_group_rule_prefix_list(**kwargs):
 	try:
@@ -58,10 +59,11 @@ def add_security_group_rule_prefix_list(**kwargs):
 		--ip-permissions \
 		IpProtocol=" + kwargs['Ip_protocol'] + ",FromPort=" + kwargs['From_port'] + ",ToPort=" + kwargs['To_port'] + ",PrefixListIds='[{PrefixListId=" + kwargs['Prefix_list_id'] + "}]' "
 		)
-		logging.info('Created Security Group:' + kwargs['Security_group_name'])
+		logging.info(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
+		print(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
 	except Exception as err:
 		logging.info(err)
-		print(f'Logging "add_security_group_rule_prefix_list" in security-group.log')
+		print('Logging "add_security_group_rule_prefix_list" in security-group.log...')
 
 def update_security_group_rule(**kwargs):
 	try:
@@ -71,10 +73,11 @@ def update_security_group_rule(**kwargs):
 		--ip-permissions \
 		IpProtocol=" + kwargs['Ip_protocol'] + ",FromPort=" + kwargs['From_port'] + ",ToPort=" + kwargs['To_port'] + ",IpRanges='[{CidrIp=" + kwargs['IP_range'] + ",Description=" + kwargs['Security_rule_description'] + "}]' "
 		)
-		logging.info('Created Security Group:' + kwargs['Security_group_name'])
+		logging.info('Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
+		print('Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
 	except Exception as err:
 		logging.info(err)
-		print(f'Logging "update_security_group_rule" in security-group.log')
+		print('Logging "update_security_group_rule" in security-group.log...')
 
 def update_security_group_rule_prefix_list(**kwargs):
 	try:
@@ -84,10 +87,10 @@ def update_security_group_rule_prefix_list(**kwargs):
 		--ip-permissions \
 		IpProtocol=" + kwargs['Ip_protocol'] + ",FromPort=" + kwargs['From_port'] + ",ToPort=" + kwargs['To_port'] + ",PrefixListIds='[{PrefixListId=" + kwargs['Prefix_list_id'] + ",Description=" + kwargs['Security_rule_description'] + "}]' "
 		)
-		logging.info('Created Security Group:' + kwargs['Security_group_name'])
+		logging.info(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
 	except Exception as err:
 		logging.info(err)
-		print(f'Logging "update_security_group_rule_prefix_list" in security-group.log')
+		print('Logging "update_security_group_rule_prefix_list" in security-group.log...')
 
 def remove_security_group_rule(**kwargs):
 	try:
@@ -97,10 +100,11 @@ def remove_security_group_rule(**kwargs):
 		--ip-permissions \
 		IpProtocol=" + kwargs['Ip_protocol'] + ",FromPort=" + kwargs['From_port'] + ",ToPort=" + kwargs['To_port'] + ",IpRanges='[{CidrIp=" + kwargs['IP_range'] + "}]' "
 		)
-		logging.info('Created Security Group:' + kwargs['Security_group_name'])
+		logging.info(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
+		print(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
 	except Exception as err:
 		logging.info(err)
-		print('Logging "remove_security_group_rule" in security-group.log')
+		print('Logging "remove_security_group_rule" in security-group.log...')
 
 def remove_security_group_rule_prefix_list(**kwargs):
 	try:
@@ -110,10 +114,11 @@ def remove_security_group_rule_prefix_list(**kwargs):
 		--ip-permissions \
 		IpProtocol=" + kwargs['Ip_protocol'] + ",FromPort=" + kwargs['From_port'] + ",ToPort=" + kwargs['To_port'] + ",PrefixListIds='[{PrefixListId=" + kwargs['Prefix_list_id'] + "}]' "
 		)
-		logging.info('Created Security Group:' + kwargs['Security_group_name'])
+		logging.info(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
+		print(f'Created Security Group:{kwargs["Security_group_name"]} in {kwargs["Region"]}...')
 	except Exception as err:
 		logging.info(err)
-		print('Logging "remove_security_group_rule_prefix_list" in security-group.log')
+		print('Logging "remove_security_group_rule_prefix_list" in security-group.log...')
 
 def get_SecurityGroupId(security_group_name, region='us-east-1'):
 	try:
@@ -125,14 +130,15 @@ def get_SecurityGroupId(security_group_name, region='us-east-1'):
 			return item["GroupId"]
 	except Exception as err:
 		logging.info(err)
-		print('Logging "get_SecurityGroupId" in security-group.log')
+		print('Logging "get_SecurityGroupId" in security-group.log...')
 
 def destroy_security_group(security_group_id, region='us-east-1'):
 	try:
 		os.system("aws ec2 delete-security-group --group-id " + security_group_id + " --region " + region)
-		logging.info("Deleted Security Group Id: " + security_group_id + ' in region: '+ region)
+		logging.info(f'Deleted Security Group Id:{security_group_id} in region: {region}...')
+		print(f'Deleted Security Group Id:{security_group_id} in region: {region}...')
 	except Exception as err:
-		print('Logging destroy_security_group in security-group.log')
+		print('Logging destroy_security_group in security-group.log...')
 		logging.info(err)
 
 def erase_security_group(region='us-east-1'):
@@ -141,16 +147,15 @@ def erase_security_group(region='us-east-1'):
 		output = os.popen('aws ec2 describe-security-groups  --region ' + region).read()
 		security_group_data = json.loads(str(output))
 		for data in security_group_data['SecurityGroups']:
-			print('Logging erase_security_group: ' + data['GroupId'])
 			destroy_security_group(data['GroupId'], region=region)
-			logging.info('Logging erase_security_group: ' + data['GroupId'] + ' in region: '+ region)
+			logging.info(f'Delete: {data["GroupId"]} in region: {region}...')
+			print(f'Delete: {data["GroupId"]} in region: {region}...')
 	
 		new_data = json.dumps(data, indent=2)
 		print(new_data)
 	except Exception as err:
 		logging.info(err)
-		print('Logging error to security-group.log')
-
+		print('Logging error to security-group.log...')
 
 # ---------------------------------------- End -----------------------------------------------------
 
