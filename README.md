@@ -89,7 +89,7 @@ maendeleolab_lib.py
 
 **6**  - I recommend running the script **deploy_NetworkDev1.py** to see what the expected results look like.
 
-The script will create security groups in your AWS account and will become your single source of truth for your prefix lists. 
+The script will create security groups in your AWS region(s) and will become your single source of truth for your security groups. 
 
 ```
 ./deploy_NetworkDev1.py or python3 deploy_NetworkDev1.py
